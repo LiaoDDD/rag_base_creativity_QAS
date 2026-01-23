@@ -1,4 +1,4 @@
-# rag_qa — 創造力傾向 RAG 問答系統（語意偵測 + TruLens 評估）
+# 創造力傾向 RAG 問答系統（語意偵測 + TruLens 評估）
 
 - **介面**：Streamlit（預設 port 8501）同時呈現 RAG / Base LLM 回應
 - **語意偵測**：CreativityDetector（向量 + 關鍵字）標註最可能的創造力特質
