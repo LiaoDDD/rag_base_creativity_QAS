@@ -1,0 +1,39 @@
+services:
+  app:
+    build: .
+    image: rag_qa:latest
+    container_name: rag_qa_app
+    ports:
+      - "49157:8501"
+    environment:
+      - OLLAMA_BASE_URL=https://iard.liontravel.com/ollama
+      - OLLAMA_MODEL=llama3.3:70b
+      - HF_EMBEDDING_MODEL=intfloat/multilingual-e5-base
+      - CHROMA_DIR=/app/chroma_db
+      - COLLECTION_NAME=rag_qa_creativity
+      - TOP_K=4
+      - TEMPERATURE=0.2
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./chroma_db:/app/chroma_db
+      - ./eval:/app/eval
+    command: streamlit run app.py --server.address=0.0.0.0 --server.port=8501
+
+  eval:
+    image: rag_qa:latest
+    depends_on:
+      - app
+    environment:
+      - OLLAMA_BASE_URL=https://iard.liontravel.com/ollama
+      - OLLAMA_MODEL=llama3.3:70b
+      - HF_EMBEDDING_MODEL=intfloat/multilingual-e5-base
+      - CHROMA_DIR=/app/chroma_db
+      - COLLECTION_NAME=rag_qa_creativity
+      - TOP_K=4
+      - TEMPERATURE=0.2
+    volumes:
+      - ./data:/app/data
+      - ./chroma_db:/app/chroma_db
+      - ./eval:/app/eval
+    entrypoint: ["python", "-m", "backend.evaluate_trulens"]
