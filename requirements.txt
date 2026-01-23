@@ -1,0 +1,37 @@
+# App/UI
+streamlit>=1.35.0
+
+# LangChain + integrations (LCEL-compatible)
+langchain>=0.2.17,<0.4
+langchain-core>=0.2.38,<0.4
+langchain-community>=0.2.17,<0.4
+langchain-ollama>=0.2.0
+langchain-chroma>=0.1.2
+langchain-huggingface>=0.1.0
+langchain-text-splitters>=0.2.2
+
+# Vector DB
+chromadb>=0.5.5
+
+# Embeddings
+sentence-transformers>=2.2.2
+transformers>=4.40.0
+torch>=2.2.0
+
+# File loaders
+pypdf>=3.9.0
+python-docx>=0.8.11
+
+# Evaluation
+trulens>=2.4.0
+trulens-apps-langchain>=2.4.0
+trulens-providers-openai>=2.4.0
+openai>=1.40.0
+
+# Utils
+numpy>=1.26.4
+pandas>=2.2.2
+tqdm>=4.66.0
+python-dotenv>=1.0.0
+# Plotting & Evaluation
+matplotlib>=3.8.0
