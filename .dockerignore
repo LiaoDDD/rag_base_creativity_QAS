@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+dist/
+build/
+.eggs/
+*.egg-info/
+.venv/
+.ENV/赤
+.env
+.ipynb_checkpoints/
+.git/
+.gitignore
+chroma_db/

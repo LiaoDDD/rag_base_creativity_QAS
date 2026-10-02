@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# App/runtime artifacts
+.cache/
+.tmp/
+.streamlit/
+tmp_write_test.txt
+default.sqlite
+data/*.sqlite
+
+# Vector DB persistence
+chroma_db/
+
+# Evaluation outputs
+eval/results.csv
+eval/metrics_summary.csv
+eval/fig5_1.png
+rag_metrics_comparison_bw.png
